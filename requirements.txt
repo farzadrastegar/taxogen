@@ -1,4 +1,4 @@
 numpy==1.16.6
-PyYAML==5.1
 scipy==1.2.1
 spherecluster==0.1.7
+PyYAML==5.1
