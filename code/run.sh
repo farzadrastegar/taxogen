@@ -13,7 +13,7 @@ if [[ $CONFIGURE == "with-config" ]]; then
 	echo '-> Download dblp'
 	mkdir -p ../data/dblp
 	wget -O ../data/dblp/dblp.tar.gz https://worksheets.codalab.org/rest/bundles/0x3b33ffbc3a4346fd8e288dfeda291d6c/contents/blob/
-	tar xvzf ../data/dblp/dblp.tar.gz
+	tar xvzf ../data/dblp/dblp.tar.gz -C ../data/dblp
 	rm ../data/dblp/dblp.tar.gz
 
 	echo '-> Compile word2vec'
