@@ -31,19 +31,32 @@ https://drive.google.com/file/d/1GbxKrxrmFrKt5vgDHP1xe1Qr_rfvR1jh/view?usp=shari
 
 # How to Run
 
+This code works with Python 2.7. 
+
+First, install python packages using this command.
+
+`pip install -r requirements.txt`
+
+
 In order to run, use one the following commands:
 
 **Option 1**: 
 
 If you would like to run code and let it prepare data files in proper directories, use this command:
 
-`./code/run.sh with-config`
+```
+cd code
+./run.sh with-config
+```
 
 **Option 2**:
 
 If you would like to run code by speicfying the data path, use the command below.
 
-`./code/run.sh DATAPATH "/path/to/data"`
+```
+cd code
+./run.sh DATAPATH "/path/to/data"
+```
 
 Note: "/path/to/data" must contain the following files:
 ```
