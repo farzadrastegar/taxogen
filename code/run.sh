@@ -10,6 +10,12 @@ if [ $# -ne 0 ]; then
 fi
 
 if [[ $CONFIGURE == "with-config" ]]; then
+	echo '-> Download dblp'
+	mkdir -p ../data/dblp
+	wget -O ../data/dblp/dblp.tar.gz https://worksheets.codalab.org/rest/bundles/0x3b33ffbc3a4346fd8e288dfeda291d6c/contents/blob/
+	tar xvzf ../data/dblp/dblp.tar.gz
+	rm ../data/dblp/dblp.tar.gz
+
 	echo '-> Compile word2vec'
 	## compile word2vec for embedding learning
 	gcc word2vec.c -o word2vec -lm -pthread -O2 -Wall -funroll-loops -Wno-unused-result

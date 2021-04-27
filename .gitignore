@@ -1,5 +1,5 @@
 # data
-#data/
+data/dblp
 
 # SegPhrase output
 SegPhrase/
@@ -37,7 +37,7 @@ parts/
 sdist/
 var/
 wheels/
-data/
+#data/
 *.egg-info/
 .installed.cfg
 *.egg
