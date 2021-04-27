@@ -50,9 +50,9 @@ fi
 
 echo '-> Start TaxonGen'
 if [ $# -eq 2 ]; then
-	python main.py --datapath "$2"
+	python2 main.py --datapath "$2"
 else
-	python main.py
+	python2 main.py
 fi
 
 echo '-> Generate compressed taxonomy'
