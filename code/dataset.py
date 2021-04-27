@@ -61,12 +61,19 @@ class DataSet:
 class SubDataSet:
 
     def __init__(self, full_data, doc_id_file, keyword_file):
+        print ('mylog0: ' + keyword_file)
         self.keywords = self.load_keywords(keyword_file, full_data)
+        print ('mylog1')
         self.keyword_to_id = self.gen_keyword_id()
+        print ('mylog2')
         self.keyword_set = set(self.keywords)
+        print ('mylog3')
         self.embeddings = self.load_embeddings(full_data)
+        print ('mylog4: ' + doc_id_file)
         self.documents, self.original_doc_ids = self.load_documents(full_data, doc_id_file)
+        print ('mylog5')
         self.keyword_idf = self.build_keyword_idf()
+        print ('mylog6')
 
     def load_keywords(self, keyword_file, full_data):
         keywords = []
@@ -113,9 +120,16 @@ class SubDataSet:
         doc_ids = []
         with open(doc_id_file, 'r') as fin:
             for line in fin:
+
+                # # mylog
+                # comma_separated_ids = line.strip().split()[-1]
+                # doc_ids_list = comma_separated_ids.split(',')
+                # doc_ids.extend(doc_ids_list)
+                
                 doc_id = int(line.strip())
                 doc_ids.append(doc_id)
         return doc_ids
+        # return map(int, doc_ids)
 
     def build_keyword_idf(self):
         keyword_idf = defaultdict(float)

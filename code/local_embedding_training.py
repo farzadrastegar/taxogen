@@ -32,7 +32,7 @@ def read_files(folder, parent):
     with open(hier_file) as f:
         for line in f:
             segs = line.strip('\r\n').split(' ')
-            if segs[1] == parent:
+            if segs[1] == parent and segs[0] in embs:
                 cates[segs[0]] = set()
 
     print('[Local-embedding] Finish reading embedding, hierarchy and keywords files.')

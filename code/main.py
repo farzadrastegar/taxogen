@@ -13,6 +13,7 @@ from local_embedding_training import main_local_embedding
 from shutil import copyfile
 from distutils.dir_util import copy_tree
 from os import symlink
+import argparse
 
 MAX_LEVEL = 3
 
@@ -53,7 +54,9 @@ def recur(input_dir, node_dir, n_cluster, parent, n_cluster_iter, filter_thre,\
     start = time.time()
     df = DataFiles(input_dir, node_dir)
     ## TODO: Everytime we need to read-in the whole corpus, which can be slow.
+    print('mylog df.doc_file: ' + df.doc_file)
     full_data = DataSet(df.embedding_file, df.doc_file)
+    # print('mylog type(full_data): ' + str(type(full_data)))
     end = time.time()
     print('[Main] Done reading the full data using time %s seconds' % (end-start))
 
@@ -133,9 +136,11 @@ def main(opt):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Taxogen')
+    parser.add_argument("--datapath", type=str, default='self-generate', help="The parent path containing the dblp directory")
+    params, _ = parser.parse_known_args()
     # opt = load_toy_params()
     # opt = load_dblp_params()
     # opt = load_sp_params()
-    opt = load_dblp_params_method()
+    opt = load_dblp_params_method(params.datapath)
     main(opt)
-
