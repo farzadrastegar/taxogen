@@ -1,4 +1,7 @@
 #!/bin/bash
+shopt -s expand_aliases
+alias run_python='python2'
+
 ## Name of the input corpus
 corpusName=dblp
 ## Name of the taxonomy
@@ -50,13 +53,13 @@ fi
 
 echo '-> Start TaxonGen'
 if [ $# -eq 2 ]; then
-	python2 main.py --datapath "$2"
+	run_python main.py --datapath "$2"
 else
-	python2 main.py
+	run_python main.py
 fi
 
 echo '-> Generate compressed taxonomy'
 if [ ! -d ../data/$corpusName/taxonomies ]; then
 	mkdir -p ../data/$corpusName/taxonomies
 fi
-python compress.py -root ../data/$corpusName/$taxonName -output ../data/$corpusName/taxonomies/$taxonName.txt
+run_python compress.py -root ../data/$corpusName/$taxonName -output ../data/$corpusName/taxonomies/$taxonName.txt
