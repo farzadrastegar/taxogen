@@ -31,11 +31,11 @@ https://drive.google.com/file/d/1GbxKrxrmFrKt5vgDHP1xe1Qr_rfvR1jh/view?usp=shari
 
 # How to Run
 
-This code works with Python 2.7. 
+This code works with Python 2.7. Make sure `python2 -V` gives you 2.7.x.
 
-First, install python packages using this command.
+Install python packages using the command below.
 
-`pip install -r requirements.txt`
+`pip2 install -r requirements.txt`
 
 
 In order to run, use one the following commands:
