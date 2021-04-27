@@ -42,10 +42,10 @@ if [[ $CONFIGURE == "with-config" ]]; then
 	fi
 
 	echo '-> Start cluster-preprocess.py'
-	time python cluster-preprocess.py $corpusName
+	time run_python cluster-preprocess.py $corpusName
 
 	echo '-> Start preprocess.py'
-	time python preprocess.py $corpusName
+	time run_python preprocess.py $corpusName
 
 	cp ../data/$corpusName/input/embeddings.txt ../data/$corpusName/init/embeddings.txt
 	cp ../data/$corpusName/input/keywords.txt ../data/$corpusName/init/seed_keywords.txt
