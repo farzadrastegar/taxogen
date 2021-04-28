@@ -37,8 +37,18 @@ Install python packages using the command below.
 
 `pip2 install -r requirements.txt`
 
+Also, make sure that `gcc` is installed (on Ubuntu 18.04, run the `apt install` command below to install gcc).
 
-In order to run, use one the following commands:
+`apt install build-essential -y`
+
+This code is tested with the following `gcc` version.
+
+```
+gcc --version
+gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+```
+
+In order to run code, use one the following commands:
 
 **Option 1**: 
 
@@ -59,6 +69,7 @@ cd code
 ```
 
 Note: "/path/to/data" must contain the following files:
+
 ```
 data
 └── dblp
