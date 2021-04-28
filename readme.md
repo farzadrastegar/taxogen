@@ -1,3 +1,7 @@
+```diff
++ April 28, 2021: The instructions for how to run code got updated. See below for more information.
+```
+
 # About
 
 This repo is an implementation of the following paper for constructing topic taxonomy from text corpora.
