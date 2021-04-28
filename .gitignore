@@ -140,4 +140,4 @@ ENV/
 *.out
 *.app
 
-./code/word2vec
+code/word2vec
