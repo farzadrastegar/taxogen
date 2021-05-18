@@ -52,27 +52,47 @@ gcc --version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 ```
 
-In order to run code, use one the following commands:
+In order to run code, follow the guidelines below.
+
+```
+USAGE: ./run.sh <with-config|no-config> [OPTIONS]
+
+OPTIONS: 
+        -d, --download                  data used in the paper will be downloaded at '../data'
+        -p, --path </path/to/data>      path to data for taxonomy construction (default=../data)      
+ 
+        '/path/to/data' must contain the following tree
+        data
+        └── dblp
+                ├── input
+                │   └── embeddings.txt
+                └── raw
+                        ├── keywords.txt
+                        └── papers.txt
+
+```
+
+Common ways of running code is as follows.
 
 **Option 1**: 
 
-If you would like to run code and let it prepare data files in proper directories, use this command:
+If you would like to run code and let it prepare the data files **used in the paper** in proper directories, use this command:
 
 ```
 cd code
-./run.sh with-config
+./run.sh with-config --download
 ```
 
 **Option 2**:
 
-If you would like to run code by speicfying the data path, use the command below.
+If you would like to run code and let it prepare **your** data files in proper directories, use this command by speicfying the path to your data.
 
 ```
 cd code
-./run.sh DATAPATH "/path/to/data"
+./run.sh with-config --path "/path/to/data"
 ```
 
-Note: "/path/to/data" must contain the following files:
+Note: your "/path/to/data" must contain the following directory tree:
 
 ```
 data
